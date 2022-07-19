@@ -13,7 +13,7 @@ const countries = {
   "ca":"Catalan",
   "ceb":"Cebuano",
   "ny":"Chichewa",
-  "zh":"Chinese",
+  "zh-CN":"Chinese",
   "co":"Corsican",
   "hr":"Croatian",
   "cs":"Czech",

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" >
+  <head>
+    <meta charset="utf-8">  
+    <title>HYF Translate</title>
+    <link rel="icon" type="image/x-icon" href="./assets/FAVICON.png">
+    <link rel="stylesheet" href="style.css">
+    <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  </head>
+  <body>
+    <div class="outercontainer">
+        <div> <h1>HYF TRANSLATE</h1></div>
+      <div class="innercontainer">
+        <div class="text-input">
+          <textarea spellcheck="false" class="from-text" placeholder="Enter text"></textarea>
+          <textarea spellcheck="false" readonly disabled class="to-text" placeholder="Translation"></textarea>
+        </div>
+        <ul class="controls">
+          <li class="row from">
+            <div class="icons">
+              <i id="leftV" class="material-icons ">volume_up</i>
+              <i id="leftC" class="material-icons copy">content_copy</i>
+            </div>
+            <select></select>
+          </li>
+          <li class="exchange"><i id="swapL" class="material-icons ">swap_horiz</i></li>
+          <li class="row to">
+            <select></select>
+            <div class="icons">
+              <i id="rigthV" class="material-icons ">volume_up</i>
+              <i id="rigthC" class="material-icons copy">content_copy</i>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <button>Translate Text</button>
+    </div>
+<script src="./script.js"></script>
+<script src="./languages.js"></script>
+
+
+  </body>
+</html>

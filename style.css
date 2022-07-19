@@ -1,0 +1,138 @@
+*{
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins';
+}
+body{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 10px;
+  min-height: 100vh;
+  background: #01146094;
+}
+h1{
+  color: rgb(2, 26, 71);
+  text-align: center;
+  padding-bottom: 10px;
+}
+
+.outercontainer{
+  max-width: 690px;
+  width: 100%;
+  padding: 30px;
+  background: #fff;
+  border-radius: 10px;
+}
+.innercontainer{
+  border-radius: 5px;
+  border: 1px solid rgba(18, 2, 245, 0.200);
+}
+.innercontainer .text-input{
+  display: flex;
+  border-bottom: 1px solid rgba(18, 2, 245, 0.200);
+}
+.text-input .to-text{
+  border-radius: 0px;
+  border-left: 1px solid rgba(18, 2, 245, 0.300);
+}
+.text-input textarea{
+  height: 250px;
+  width: 100%;
+  border: none;
+  outline: none;
+  resize: none;
+  background: none;
+  font-size: 18px;
+  padding: 10px 15px;
+  border-radius: 5px;
+  color: #494949;
+}
+.text-input textarea::placeholder{
+  color: #b7b6b6;
+}
+.controls, li, .icons, .icons i{
+  display: flex;
+  justify-content:space-around;
+}
+.controls{
+   padding: 12px 5px;
+}
+
+.controls .row .icons i{
+  width: 50px;
+  color: #646464;
+  font-size: 20px;
+  cursor: pointer;
+  justify-content: center;
+}
+
+.controls .row .icons i:hover{
+  color: rgb(44, 44, 44);
+  }
+
+.controls .row select{
+  color: #333;
+  border: none;
+  outline: none;
+  font-size: 18px;
+  background: none;
+  padding-left: 5px;
+}
+.controls .row select:hover{
+  background-color: rgba(233, 233, 233, 0.371);
+  }
+
+
+.controls .exchange{
+  color: #646464;
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+.controls .exchange:hover{
+  color: rgb(44, 44, 44);
+  }
+.outercontainer button{
+  width: 100%;
+  padding: 14px;
+  outline: none;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  margin-top: 20px;
+  font-size: 17px;
+  border-radius: 5px;
+  background: #111834cd;
+}
+
+.outercontainer button:hover{
+  background-color: #090e20cd;
+  }
+
+@media (max-width: 690px){
+
+  .innercontainer .text-input{
+    flex-direction: column;
+  }
+  .text-input .to-text{
+    border-left: 0px;
+    border-top: 1px solid #ccc;
+  }
+  .text-input textarea{
+    height: 200px;
+  }
+  .controls .row .icons{
+    display: none;
+  }
+  .outercontainer button{
+    padding: 13px;
+    font-size: 16px;
+  }
+  .controls .row select{
+    font-size: 16px;
+  }
+  .controls .exchange{
+    font-size: 30px;
+  }
+}

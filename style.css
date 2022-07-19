@@ -108,6 +108,7 @@ h1{
 
 .outercontainer button:hover{
   background-color: #090e20cd;
+  min-width: 400px;
   }
 
 @media (max-width: 690px){

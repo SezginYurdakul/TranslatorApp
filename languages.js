@@ -1,4 +1,4 @@
-const countries = {
+export const countries = {
   "af":"Afrikaans",
   "sq":"Albanian",
   "am":"Amharic",

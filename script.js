@@ -30,7 +30,7 @@ translateBtn.addEventListener("click", async () => {
   const apiKey = {
     method: "GET",
     headers: {
-      "X-RapidAPI-Key": "54a0803868msh446ebfe6adda6f5p1ab66djsn0d1863f22e5e",
+      "X-RapidAPI-Key": "1634848dd6msha6981eb6d5c1d4ep1d8f26jsn5c369189cb99",
       "X-RapidAPI-Host": "google-translate20.p.rapidapi.com",
     },
   };

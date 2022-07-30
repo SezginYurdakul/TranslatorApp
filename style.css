@@ -16,6 +16,13 @@ h1{
   text-align: center;
   padding-bottom: 10px;
 }
+#searchHistory{
+  color: rgb(2, 26, 71);
+  text-align: center;
+  padding-bottom: 3px;
+  font-size: 25px;
+  margin-top: -20px;
+}
 
 .outercontainer{
   max-width: 690px;
@@ -24,6 +31,18 @@ h1{
   background: #fff;
   border-radius: 10px;
 }
+
+#historyFrame{
+  max-width: 1000px;
+  max-height: 800px;
+  width: 90%;
+  min-height: 500px;
+  padding: 30px;
+  background: #fff;
+  border-radius: 10px;
+  display:none;
+}
+
 .innercontainer{
   border-radius: 5px;
   border: 1px solid rgba(18, 2, 245, 0.200);
@@ -32,6 +51,7 @@ h1{
   display: flex;
   border-bottom: 1px solid rgba(18, 2, 245, 0.200);
 }
+
 .text-input .to-text{
   border-radius: 0px;
   border-left: 1px solid rgba(18, 2, 245, 0.300);
@@ -93,7 +113,7 @@ h1{
 .controls .exchange:hover{
   color: rgb(44, 44, 44);
   }
-.outercontainer button{
+.button{
   width: 100%;
   padding: 14px;
   outline: none;
@@ -108,10 +128,9 @@ h1{
 
 .outercontainer button:hover{
   background-color: #090e20cd;
-  min-width: 400px;
   }
 
-@media (max-width: 690px){
+@media (max-width: 690px ){
 
   .innercontainer .text-input{
     flex-direction: column;
@@ -136,4 +155,27 @@ h1{
   .controls .exchange{
     font-size: 30px;
   }
+}
+
+/* Search History Table Styling */
+#searchHistoryTable {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#searchHistoryTable td, #searchHistoryTable th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#searchHistoryTable tr:nth-child(even){background-color: #f2f2f2;}
+
+#searchHistoryTable tr:hover {background-color: #ddd;}
+
+#searchHistoryTable th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #111834cd;
+  color: white;
 }

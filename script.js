@@ -1,13 +1,19 @@
+"use strict";
+
 import { initialPageLoad } from "./initialPage.js";
 import { translate } from "./translate.js";
 import { exchangeLanguages } from "./exchangeLang.js";
 import { cleanToTextArea } from "./cleanTextArea.js";
+import { createHistoryPage } from "./showHistoryPage.js";
 
 const fromText = document.querySelector(".from-text");
 const toText = document.querySelector(".to-text");
 const translateBtn = document.querySelector("button");
 const exchageIcon = document.querySelector(".exchange");
 const icons = document.querySelectorAll(".row i");
+const translateFrame = document.querySelector("#translateFrame");
+const showHistoryButton = document.querySelector("#showHistory");
+showHistoryButton.addEventListener("click", createHistoryPage);
 
 translateBtn.addEventListener("click", translate);
 exchageIcon.addEventListener("click", exchangeLanguages);

@@ -11,6 +11,8 @@ body{
   min-height: 100vh;
   background: #01146094;
 }
+
+
 h1{
   color: rgb(2, 26, 71);
   text-align: center;
@@ -25,8 +27,6 @@ h1{
   background: #fff;
   border-radius: 10px;
 }
-
-
 
 .innercontainer{
   border-radius: 5px;
@@ -143,10 +143,15 @@ h1{
 }
 
 /* Search History Table Styling */
+
+.userInterface{
+  width: 100%;
+
+}
+
 #searchHistoryTable {
   border-collapse: collapse;
   width: 100%;
-  
 }
 
 #searchHistory{
@@ -159,9 +164,10 @@ h1{
 #historyFrame{
   max-width: 700px;
   max-height: 800px;
-  width: 70%;
+  width: 100%;
   height: 80%;
   min-height: 500px;
+  min-width: 750px;
   padding: 30px;
   background: #fff;
   display:none;
@@ -172,8 +178,16 @@ h1{
 #searchHistoryTable td, #searchHistoryTable th {
   border: 1px solid #ddd;
   padding: 8px;
-  font-size: 13px;
+  font-size: 12px;
 }
+
+ #searchHistoryTable th {
+  border: 1px solid #ddd;
+  padding: 8px;
+  font-size: 12px;
+  color: white;
+}
+
 
 #searchHistoryTable tr:nth-child(even){background-color: #f2f2f2;}
 

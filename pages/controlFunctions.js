@@ -1,5 +1,5 @@
 "use strict";
-import { FROM_TEXT } from "./constants";
+import { FROM_TEXT } from "../constants";
 
 const fromText = document.querySelector(FROM_TEXT);
 const toText = document.querySelector(".to-text");

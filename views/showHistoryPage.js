@@ -1,4 +1,4 @@
-import { deleteRecord, getAllInfo } from "./services/localStorageService.js";
+import { deleteRecord, getAllInfo } from "../services/localStorageService.js";
 
 let selectedRecordList = [];
 

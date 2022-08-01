@@ -1,6 +1,6 @@
 "use strict";
-import { writeDownToLocaleStorage } from "./writeDownToLocale.js";
-import { countries } from "./languages.js";
+import { writeDownToLocaleStorage } from "../pages/writeDownToLocale.js";
+import { countries } from "../pages/languages.js";
 
 export async function translate() {
   const selectTag = document.querySelectorAll("select");

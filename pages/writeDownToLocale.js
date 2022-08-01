@@ -1,4 +1,4 @@
-import { addRecord } from "./services/localStorageService.js";
+import { addRecord } from "../services/localStorageService.js";
 
 export function writeDownToLocaleStorage(fromLang, targetLang, fromText) {
   const currentDate = createDateTime();

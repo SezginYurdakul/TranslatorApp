@@ -1,13 +1,16 @@
-'use strict';
-import { writeDownToLocaleStorage } from "./writeDownToLocale";
-const selectTag = document.querySelectorAll("select");
-const fromText = document.querySelector(".from-text");
-const toText = document.querySelector(".to-text");
+"use strict";
+import { writeDownToLocaleStorage } from "./writeDownToLocale.js";
+import { countries } from "./languages.js";
 
 export async function translate() {
+  const selectTag = document.querySelectorAll("select");
+  const fromText = document.querySelector(".from-text");
+  const toText = document.querySelector(".to-text");
   const text = fromText.value.trim();
   const translateTo = selectTag[0].value;
   const translateFrom = selectTag[1].value;
+  
+  
   const apiKey = {
     method: "GET",
     headers: {
@@ -26,7 +29,11 @@ export async function translate() {
     const getData = await getDataFromApi.data;
     const translatedData = getData.translation;
     toText.value = translatedData;
-    writeDownToLocaleStorage(translateFrom, fromText);
+    writeDownToLocaleStorage(
+      countries[translateTo],
+      countries[translateFrom],
+      text
+    );
   } catch (error) {
     console.log(error.message);
   }

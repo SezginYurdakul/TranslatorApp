@@ -1,5 +1,7 @@
-const selectTag = document.querySelectorAll("select");
-const fromText = document.querySelector(".from-text");
+"use strict";
+import { FROM_TEXT } from "./constants";
+
+const fromText = document.querySelector(FROM_TEXT);
 const toText = document.querySelector(".to-text");
 
 export function controlButtonFunctions(target) {

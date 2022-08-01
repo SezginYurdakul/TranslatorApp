@@ -16,13 +16,7 @@ h1{
   text-align: center;
   padding-bottom: 10px;
 }
-#searchHistory{
-  color: rgb(2, 26, 71);
-  text-align: center;
-  padding-bottom: 3px;
-  font-size: 25px;
-  margin-top: -20px;
-}
+
 
 .outercontainer{
   max-width: 690px;
@@ -32,16 +26,7 @@ h1{
   border-radius: 10px;
 }
 
-#historyFrame{
-  max-width: 1000px;
-  max-height: 800px;
-  width: 90%;
-  min-height: 500px;
-  padding: 30px;
-  background: #fff;
-  border-radius: 10px;
-  display:none;
-}
+
 
 .innercontainer{
   border-radius: 5px;
@@ -130,7 +115,7 @@ h1{
   background-color: #090e20cd;
   }
 
-@media (max-width: 690px ){
+@media (max-width: 815px ){
 
   .innercontainer .text-input{
     flex-direction: column;
@@ -161,16 +146,38 @@ h1{
 #searchHistoryTable {
   border-collapse: collapse;
   width: 100%;
+  
+}
+
+#searchHistory{
+  color: rgb(2, 26, 71);
+  text-align: center;
+  padding-bottom: 5px;
+  font-size: 18px;
+}
+
+#historyFrame{
+  max-width: 700px;
+  max-height: 800px;
+  width: 70%;
+  height: 80%;
+  min-height: 500px;
+  padding: 30px;
+  background: #fff;
+  display:none;
+  overflow:scroll;
+
 }
 
 #searchHistoryTable td, #searchHistoryTable th {
   border: 1px solid #ddd;
   padding: 8px;
+  font-size: 13px;
 }
 
 #searchHistoryTable tr:nth-child(even){background-color: #f2f2f2;}
 
-#searchHistoryTable tr:hover {background-color: #ddd;}
+#searchHistoryTable tr:hover {background-color: rgba(250, 217, 217, 0.863);}
 
 #searchHistoryTable th {
   padding-top: 12px;
@@ -178,4 +185,37 @@ h1{
   text-align: left;
   background-color: #111834cd;
   color: white;
+  
+}
+
+#deleteButton{
+  background-color: #f55104;
+  color: white;
+  padding: 5px 5px;
+  border: none;
+  cursor: pointer;
+  width: 110px;
+  font-size: 14px;
+  margin-left: 20%;
+  margin-right: 3px;
+  
+}
+#translatePage{
+  background-color: #19c509;
+  color: white;
+  padding: 5px 5px;
+  border: none;
+  cursor: pointer;
+  width: 155px;
+  font-size: 14px;
+ 
+}
+
+#deleteButton:hover{
+  cursor: pointer;
+}
+
+#historyHeaders{
+  display: flex; 
+  justify-content:right; 
 }

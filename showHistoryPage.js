@@ -1,66 +1,101 @@
-"use strict";
-const translateFrame = document.querySelector("#translateFrame");
-const historyFrame = document.querySelector("#historyFrame");
-const currentDate = createDateTime();
+import { deleteRecord, getAllInfo } from "./services/localStorageService.js";
 
+let selectedRecordList = [];
+
+//const deleteButtonElement = document.querySelector("#deleteButton");
 export function createHistoryPage() {
-  translateFrame.style.display = "none";
-  historyFrame.style.display = "block";
-  historyFrame.innerHTML = String.raw`
-  <div> <h2 id="searchHistory">Search History</h2></div>
-  <table id="searchHistoryTable">
-  <tr>
-    <th>Select</th>
-    <th>Date&Time</th>
-    <th>From Language</th>
-    <th>Text to be Translated</th>
-  </tr>
-</table>
-`;
-  createTable;
-}
+  const translateFrame = document.querySelector("#translateFrame");
+  const historyFrame = document.querySelector("#historyFrame");
+  try {
+    if (historyFrame.innerHTML != null) {
+      historyFrame.innerHTML = "";
+    }
 
-function myDeleteFunction(k) {
-  document.getElementById("searchHistoryTable").deleteRow(k);
+    translateFrame.style.display = "none";
+    historyFrame.style.display = "block";
+
+    const historyHeadersElement = document.createElement("div");
+    historyHeadersElement.id = "historyHeaders";
+    historyFrame.appendChild(historyHeadersElement);
+
+    const searchHistoryElement = document.createElement("h2");
+    searchHistoryElement.id = "searchHistory";
+    searchHistoryElement.innerText = "Search History";
+    historyHeaders.appendChild(searchHistoryElement);
+
+    const deleteButtonElement = document.createElement("p");
+    deleteButtonElement.id = "deleteButton";
+    deleteButtonElement.innerText = "Delete Record";
+    historyHeadersElement.appendChild(deleteButtonElement);
+
+    const translatePageElement = document.createElement("p");
+    translatePageElement.id = "translatePage";
+    translatePageElement.innerText = "=>Translate Page=>";
+    historyHeadersElement.appendChild(translatePageElement);
+
+    const tableElement = document.createElement("table");
+    tableElement.id = "searchHistoryTable";
+    historyFrame.appendChild(tableElement);
+
+    createTable();
+
+    translatePageElement.addEventListener("click", () => {
+      showTranslatePage();
+    });
+    deleteButtonElement.addEventListener("click", () => {
+      myDeleteFunction();
+    });
+  } catch (error) {
+    console.log(error.message);
+  }
 }
 
 function createTable() {
-  const numberOfLocalStorageItems = localStorage.length;
-  for (let i = 0; index < numberOfLocalStorageItems; i++) {
-    const table = document.getElementById("searchHistoryTable");
+  const allInfo = getAllInfo();
+  const numberOfLocalStorageItems = allInfo.length;
+  const table = document.getElementById("searchHistoryTable");
+  table.innerHTML = String.raw`
+  <tr>
+      <th width="4%">Select</th>
+      <th width="15%">Date&Time</th>
+      <th width="8%">From Language</th>
+      <th width="8%">Target Language</th>
+      <th width="73%">Text to be Translated</th>
+  </tr>`;
+
+  for (let i = 0; i < numberOfLocalStorageItems; i++) {
     const row = table.insertRow(-1);
     const cell1 = row.insertCell(0);
     const cell2 = row.insertCell(1);
     const cell3 = row.insertCell(2);
-    cell1.innerHTML = localStorage.key(i)[0];
-    cell2.innerHTML = localStorage.key(i)[1];
-    cell3.innerHTML = localStorage.key(i)[2];
+    const cell4 = row.insertCell(3);
+    const cell5 = row.insertCell(4);
+    const record = allInfo[i];
+    cell1.innerHTML = `<td><input type="checkbox" id="${record.id}"  class="select"></td>`;
+    cell2.innerHTML = record.date;
+    cell3.innerHTML = record.fromLang;
+    cell4.innerHTML = record.toLang;
+    cell5.innerHTML = record.text;
+    document.getElementById(record.id).addEventListener("change", (event) => {
+      if (event.target.checked) {
+        selectedRecordList.push(event.target.id);
+      } else {
+        selectedRecordList = selectedRecordList.filter(
+          (item) => item != event.target.id
+        );
+      }
+    });
   }
 }
 
-function writeDownToLocale(fromLang, fromText) {
-  const info = [currentDate, fromLang, fromText];
-  if (fromLang.length === 0 || fromText.length === 0) {
-    console.log("Text is Empty !!");
-  } else {
-    localStorage.setItem(currentDate, info);
-  }
+function showTranslatePage() {
+  historyFrame.style.display = "none";
+  translateFrame.style.display = "block";
 }
 
-function createDateTime() {
-  const currentDate = new Date();
-  const datetime =
-    "Last Sync: " +
-    currentDate.getDay() +
-    "/" +
-    currentDate.getMonth() +
-    "/" +
-    currentDate.getFullYear() +
-    " @ " +
-    currentDate.getHours() +
-    ":" +
-    currentDate.getMinutes() +
-    ":" +
-    currentDate.getSeconds();
-  return datetime;
+function myDeleteFunction() {
+  selectedRecordList.forEach((recordId) => {
+    deleteRecord(recordId);
+  });
+  createTable();
 }

@@ -2,6 +2,8 @@
 
 **Text Translate Application**
 
+- My application link: <https://sezginyurdakul.github.io/TranslatorApp/>
+
 My application will have the function of translating a text, word or
 sentence(s) from one language to another language.
 

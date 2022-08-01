@@ -17,6 +17,7 @@ h1{
   color: rgb(2, 26, 71);
   text-align: center;
   padding-bottom: 10px;
+  font-size: 22px;
 }
 
 
@@ -51,7 +52,7 @@ h1{
   font-size: 18px;
   padding: 10px 15px;
   border-radius: 5px;
-  color: #494949;
+  color: #242424;
 }
 .text-input textarea::placeholder{
   color: #b7b6b6;
@@ -106,7 +107,7 @@ h1{
   color: #fff;
   cursor: pointer;
   margin-top: 20px;
-  font-size: 17px;
+  font-size: 16px;
   border-radius: 5px;
   background: #111834cd;
 }
@@ -132,10 +133,10 @@ h1{
   }
   .outercontainer button{
     padding: 13px;
-    font-size: 16px;
+    font-size: 14px;
   }
   .controls .row select{
-    font-size: 16px;
+    font-size: 14px;
   }
   .controls .exchange{
     font-size: 30px;
@@ -175,7 +176,7 @@ h1{
 #searchHistoryTable td, #searchHistoryTable th {
   border: 1px solid #ddd;
   padding: 8px;
-  font-size: 12px;
+  font-size: 13px;
 }
 
  #searchHistoryTable th {

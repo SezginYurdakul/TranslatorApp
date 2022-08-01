@@ -115,7 +115,7 @@ h1{
   background-color: #090e20cd;
   }
 
-@media (max-width: 815px ){
+@media (max-width: 660px ){
 
   .innercontainer .text-input{
     flex-direction: column;
@@ -140,6 +140,7 @@ h1{
   .controls .exchange{
     font-size: 30px;
   }
+  
 }
 
 /* Search History Table Styling */
@@ -163,17 +164,15 @@ h1{
 }
 
 #historyFrame{
-  max-width: 700px;
+  
+  max-width: 800px;
   max-height: 800px;
   width: 100%;
   height: 80%;
-  min-height: 500px;
-  min-width: 750px;
   padding: 30px;
   background: #fff;
   display:none;
   overflow:scroll;
-
 }
 
 #searchHistoryTable td, #searchHistoryTable th {
@@ -233,4 +232,11 @@ h1{
 #historyHeaders{
   display: flex; 
   justify-content:right; 
+}
+
+@media (max-width: 800px ){
+  
+  #historyFrame{
+    flex-direction: column;
+    }
 }

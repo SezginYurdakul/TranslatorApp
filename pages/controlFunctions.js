@@ -4,7 +4,7 @@ import { FROM_TEXT } from "../constants";
 const fromText = document.querySelector(FROM_TEXT);
 const toText = document.querySelector(".to-text");
 
-export function controlButtonFunctions(target) {
+function controlButtonFunctions(target) {
   if (!fromText.value || !toText.value) return;
 
   if (target.classList.contains("copy")) {

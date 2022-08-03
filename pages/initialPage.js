@@ -1,7 +1,7 @@
 import { countries } from "./languages.js";
 import { createTranslateView } from "../views/translateView.js";
 import { createHistoryView } from "../views/historyView.js";
-import { translate } from "../views/translate.js";
+import { translate } from "./translate.js";
 import { exchangeLanguages } from "./exchangeLang.js";
 import { cleanToTextArea } from "./cleanTextArea.js";
 import { createHistoryPage } from "../views/showHistoryPage.js";

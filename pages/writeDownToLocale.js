@@ -1,6 +1,6 @@
 import { addRecord } from "../services/localStorageService.js";
 
-export function writeDownToLocaleStorage(fromLang, targetLang, fromText) {
+export function writeDownToLocaleStorage(targetLang, fromLang, fromText) {
   const currentDate = createDateTime();
   const record = {
     id: Date.now(),

@@ -1,16 +1,7 @@
 "use strict";
-import { writeDownToLocaleStorage } from "../pages/writeDownToLocale.js";
 import { countries } from "../pages/languages.js";
-
-export async function translate() {
-  const selectTag = document.querySelectorAll("select");
-  const fromText = document.querySelector(".from-text");
-  const toText = document.querySelector(".to-text");
-  const text = fromText.value.trim();
-  const translateTo = selectTag[0].value;
-  const translateFrom = selectTag[1].value;
-  
-  
+import { writeDownToLocaleStorage } from "../pages/writeDownToLocale.js";
+export async function createApiConnection(text, translateFrom, translateTo) {
   const apiKey = {
     method: "GET",
     headers: {
@@ -19,14 +10,14 @@ export async function translate() {
       "X-RapidAPI-Host": "google-translate20.p.rapidapi.com",
     },
   };
-  const apiUrl = `https://google-translate20.p.rapidapi.com/translate?text=${text}&tl=${translateFrom}&sl=${translateTo}`;
-
+  const apiUrl = `https://google-translate20.p.rapidapi.com/translate?text=${text}&tl=${translateTo}&sl=${translateFrom}`;
+  const toText = document.querySelector(".to-text");
   if (!text) return;
   toText.setAttribute("placeholder", "Translating...");
 
   try {
     const getDataFromApi = await fetchData(apiUrl, apiKey);
-    const getData = await getDataFromApi.data;
+    const getData = getDataFromApi.data;
     const translatedData = getData.translation;
     toText.value = translatedData;
     writeDownToLocaleStorage(

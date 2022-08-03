@@ -116,39 +116,12 @@ h1{
   background-color: #090e20cd;
   }
 
-@media (max-width: 660px ){
-
-  .innercontainer .text-input{
-    flex-direction: column;
-  }
-  .text-input .to-text{
-    border-left: 0px;
-    border-top: 1px solid #ccc;
-  }
-  .text-input textarea{
-    height: 200px;
-  }
-  .controls .row .icons{
-    display: none;
-  }
-  .outercontainer button{
-    padding: 13px;
-    font-size: 14px;
-  }
-  .controls .row select{
-    font-size: 14px;
-  }
-  .controls .exchange{
-    font-size: 30px;
-  }
-  
-}
 
 /* Search History Table Styling */
 
 
 .userInterface{
-  width: 100%;
+  width: 100vh;
 }
 
 #searchHistoryTable {
@@ -164,6 +137,7 @@ h1{
 }
 
 #historyFrame{
+  width: 90vh;
   margin: 0px 20px;
   max-width: 1000px;
   max-height: 800px;
@@ -182,7 +156,7 @@ h1{
  #searchHistoryTable th {
   border: 1px solid #ddd;
   padding: 8px;
-  font-size: 12px;
+  
   color: white;
 }
 
@@ -238,4 +212,32 @@ h1{
     flex-direction: column;
     margin: 0px 20px;
     }
+}
+
+@media (max-width: 660px ){
+
+  .innercontainer .text-input{
+    flex-direction: column;
+  }
+  .text-input .to-text{
+    border-left: 0px;
+    border-top: 1px solid #ccc;
+  }
+  .text-input textarea{
+    height: 200px;
+  }
+  .controls .row .icons{
+    display: none;
+  }
+  .outercontainer button{
+    padding: 13px;
+    font-size: 14px;
+  }
+  .controls .row select{
+    font-size: 14px;
+  }
+  .controls .exchange{
+    font-size: 30px;
+  }
+  
 }

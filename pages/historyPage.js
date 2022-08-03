@@ -87,7 +87,7 @@ function createTable() {
   }
 }
 
-function showTranslatePage() {
+export function showTranslatePage() {
   const translateFrame = document.querySelector("#translateFrame");
   const historyFrame = document.querySelector("#historyFrame");
   historyFrame.style.display = "none";

@@ -17,7 +17,7 @@ export const createTranslatePage = () => {
   const rightTextCopyButton = document.querySelector("#rightC");
   const listenLeftTextButton = document.getElementById("leftV");
   const listenRightTextButton = document.getElementById("rightV");
-  
+
   populateSelectElements();
 
   showHistoryButton.addEventListener("click", createHistoryPage);
@@ -52,7 +52,7 @@ const populateSelectElements = () => {
           : country_code == "tr"
           ? "selected"
           : "";
-      let option = `<option ${selected} value="${country_code}">${countries[country_code]}</option>`;
+      const option = `<option ${selected} value="${country_code}">${countries[country_code]}</option>`;
       tag.insertAdjacentHTML("beforeend", option);
     }
   });

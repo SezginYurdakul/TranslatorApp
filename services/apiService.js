@@ -10,7 +10,7 @@ export async function createApiConnection(text, translateFrom, translateTo) {
       "X-RapidAPI-Host": "google-translate20.p.rapidapi.com",
     },
   };
-  const apiUrl = `https://google-translate20.p.rapidapi.com/translate?text=${text}&tl=${translateFrom}&sl=${translateTo}`;
+  const apiUrl = `https://google-translate20.p.rapidapi.com/translate?text=${text}&tl=${translateTo}&sl=${translateFrom}`;
   const toText = document.querySelector(".to-text");
   if (!text) return;
   toText.setAttribute("placeholder", "Translating...");

@@ -1,3 +1,5 @@
+import { toHtmlElement } from "../pages/createToHtmlElement.js";
+
 export const createTranslateView = () => {
   const htmlString = String.raw`<div id="translateFrame">
     <div class="outercontainer">
@@ -10,7 +12,7 @@ export const createTranslateView = () => {
     <ul class="controls">
       <li class="row from">
         <div class="icons">
-          <i id="leftV" class="material-icons ">volume_up</i>
+          <i id="leftV" class="material-icons listen">volume_up</i>
           <i id="leftC" class="material-icons copy">content_copy</i>
         </div>
         <select></select>
@@ -19,8 +21,8 @@ export const createTranslateView = () => {
       <li class="row to">
         <select></select>
         <div class="icons">
-          <i id="rigthV" class="material-icons ">volume_up</i>
-          <i id="rigthC" class="material-icons copy">content_copy</i>
+          <i id="rightV" class="material-icons listen">volume_up</i>
+          <i id="rightC" class="material-icons copy">content_copy</i>
         </div>
       </li>
     </ul>
@@ -30,10 +32,4 @@ export const createTranslateView = () => {
     </div>
     </div>`;
   return toHtmlElement(htmlString);
-};
-
-const toHtmlElement = (htmlStr) => {
-  const template = document.createElement("template");
-  template.innerHTML = htmlStr.trim();
-  return template.content.firstChild;
 };
